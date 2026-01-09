@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    networks:
+      go-micro:
+        ipv4_address: 172.10.0.2
+    environment:
+      POSTGRES_USER: huangjg
+      POSTGRES_PASSWORD: huangjg@1001
+      POSTGRES_DB: go-micro
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: etcd
+    networks:
+      go-micro:
+        ipv4_address: 172.10.0.3
+    ports: ["2379:2379", "2380:2380"]
+    command: etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://0.0.0.0:2379
+    restart: unless-stopped
+
+  user-srv:
+    build: ./user
+    image: user-srv:v1.0
+    container_name: user-srv
+    depends_on: [etcd, postgres]
+    networks:
+      go-micro:
+        ipv4_address: 172.10.0.4
+    ports: ["8080:8080"]
+    volumes:
+      - /Users/huangjg/Desktop/go-micro/user/etc:/etc
+    command: ["-f", "/etc/user.yaml"]
+    restart: unless-stopped
+
+  gateway:
+    build: ./gateway
+    image: gateway-srv:v1.0
+    container_name: gateway-srv
+    networks:
+      go-micro:
+        ipv4_address: 172.10.0.5
+    ports: ["8888:8888"]
+    volumes:
+      - /Users/huangjg/Desktop/go-micro/gateway/etc:/etc
+    depends_on:
+      - user-srv
+    command: ["-f", "/etc/gateway-api.yaml"]
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+    name: postgres-data
+    driver: local
+
+networks:
+  go-micro:
+    name: go-micro
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.10.0.0/16
+          gateway: 172.10.0.1

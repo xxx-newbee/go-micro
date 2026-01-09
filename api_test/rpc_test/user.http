@@ -1,0 +1,27 @@
+### 注册
+GRPC localhost:8080/user.User/Register
+Content-Type: application/json
+
+{
+  "username": "huangjg",
+  "password": "123456",
+  "nickname": "huangjg",
+  "wallet_addr": "0xabcdefggggafafasfregervsadfsvaeff",
+  "referral_code": "MQ72-7RMR"
+}
+
+### 登录
+GRPC 127.0.0.1:8080/user.User/Login
+Content-Type: application/json
+
+{
+  "username": "huangjg",
+  "password": "123456"
+}
+
+
+### 获取用户信息
+GRPC localhost:8080/user.User/GetUserInfo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0
+
+<> 2026-01-07T143943.OK.json

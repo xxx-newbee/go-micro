@@ -1,0 +1,24 @@
+###
+POST http://127.0.0.1:8888/api/user/register
+Content-Type: application/json
+
+{
+  "username": "huangjg",
+  "password": "123456",
+  "nickname": "张三",
+  "wallet_addr": "0xabcdefggggjsda2lfidsfe3vh5aisdh6fjkashf",
+  "referral_code": "CJY3-UYDX"
+}
+
+###
+POST http://127.0.0.1:8888/api/user/login
+Content-Type: application/json
+
+{
+  "username": "huangjg",
+  "password": "123456"
+}
+
+###
+GET http://127.0.0.1:8888/api/user/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0
