@@ -38,7 +38,7 @@ services:
         ipv4_address: 172.10.0.4
     ports: ["8080:8080"]
     volumes:
-      - /Users/huangjg/Desktop/go-micro/user/etc:/etc
+      - /Users/huangjg/Desktop/go-micro/etc:/etc
     command: ["-f", "/etc/user.yaml"]
     restart: unless-stopped
 
@@ -51,7 +51,7 @@ services:
         ipv4_address: 172.10.0.5
     ports: ["8888:8888"]
     volumes:
-      - /Users/huangjg/Desktop/go-micro/gateway/etc:/etc
+      - /Users/huangjg/Desktop/go-micro/etc:/etc
     depends_on:
       - user-srv
     command: ["-f", "/etc/gateway-api.yaml"]
