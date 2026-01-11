@@ -1,5 +1,5 @@
 ###
-POST http://127.0.0.1:8888/api/user/register
+POST http://127.0.0.1:8888/register
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://127.0.0.1:8888/api/user/login
+POST http://127.0.0.1:8888/login
 Content-Type: application/json
 
 {
@@ -20,5 +20,5 @@ Content-Type: application/json
 }
 
 ###
-GET http://127.0.0.1:8888/api/user/info
+GET http://127.0.0.1:8888/v1/info
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0

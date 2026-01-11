@@ -16,12 +16,41 @@ Content-Type: application/json
 
 {
   "username": "huangjg",
-  "password": "123456"
+  "password": "xxx"
 }
 
 
 ### 获取用户信息
 GRPC localhost:8080/user.User/GetUserInfo
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MjExNTAzLCJpYXQiOjE3NjgxMjUxMDN9.p_WfrrYfani750CYsh1Z5QwvhxuWUPYYO87eW_I-EdI
 
 <> 2026-01-07T143943.OK.json
+
+
+#{
+#  "id": "1",
+#  "username": "huangjg",
+#  "nickname": "huangjg",
+#  "walletAddr": "0xabcdefggggafafasfregervsadfsvaeff",
+#  "userReferralCode": "DXBU-SEV3",
+#  "referralCode": "MQ72-7RMR"
+#}
+### 更新用户信息
+GRPC localhost:8080/user.User/UpdateUserInfo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MjI2MjE3LCJpYXQiOjE3NjgxMzk4MTd9.B-aFdGPfJ4VJeSoRiRysIgroDhdnoV6K579Y2cZJpm0
+Content-Type: application/json
+
+{
+  "nickname": "xxx",
+  "password": "hangjg",
+  "wallet_addr": ""
+}
+
+//{
+//  "id": "1",
+//  "username": "huangjg",
+//  "nickname": "xxx",
+//  "walletAddr": "0xabcdefggggafafasfregervsadfsvaeff",
+//  "userReferralCode": "DXBU-SEV3",
+//  "referralCode": "MQ72-7RMR"
+//}
