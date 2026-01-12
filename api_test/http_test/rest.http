@@ -1,5 +1,5 @@
-###
-POST http://127.0.0.1:8888/api/user/register
+### 注册
+POST http://127.0.0.1:8888/register
 Content-Type: application/json
 
 {
@@ -10,8 +10,8 @@ Content-Type: application/json
   "referral_code": "CJY3-UYDX"
 }
 
-###
-POST http://127.0.0.1:8888/api/user/login
+### 登录
+POST http://127.0.0.1:8888/login
 Content-Type: application/json
 
 {
@@ -19,6 +19,28 @@ Content-Type: application/json
   "password": "123456"
 }
 
-###
-GET http://127.0.0.1:8888/api/user/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0
+### 获取用户信息
+GET http://127.0.0.1:8888/v1/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoyLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MzEyNTMwLCJpYXQiOjE3NjgyMjYxMzB9.ltlDvKUwovhSGSylEJUakvGMTWyPgbOiw-IR5ui-WHE
+
+
+### 更改用户信息
+POST http://127.0.0.1:8888/v1/update
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoxLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MzEyMTc1LCJpYXQiOjE3NjgyMjU3NzV9.mZvqqD4moELXYSssxSuJWek6pUTeubrbDqbU1p1Kjyo
+Content-Type: application/json
+
+{
+  "nickname": "xxx",
+  "wallet_addr": ""
+}
+
+
+### 修改用户密码
+POST http://127.0.0.1:8888/v1/chpasswd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoxLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MzEyMTc1LCJpYXQiOjE3NjgyMjU3NzV9.mZvqqD4moELXYSssxSuJWek6pUTeubrbDqbU1p1Kjyo
+Content-Type: application/json
+
+{
+  "old": "huangjg",
+  "new": "123456"
+}

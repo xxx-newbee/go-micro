@@ -16,12 +16,32 @@ Content-Type: application/json
 
 {
   "username": "huangjg",
-  "password": "123456"
+  "password": "huangjg"
 }
 
 
 ### 获取用户信息
 GRPC localhost:8080/user.User/GetUserInfo
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MDI1NzcyLCJpYXQiOjE3Njc5MzkzNzJ9.Jn1fGv0DmLvQdCoYrJ9sM-ixcYa4EtHUvpDWobIsJt0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoxLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4Mjk4NjI3LCJpYXQiOjE3NjgyMTIyMjd9.LwftwLBJ0zwCLA114HoXsQs3frvkVtTGju6i-XD85D8
 
 <> 2026-01-07T143943.OK.json
+
+
+### 修改用户信息
+GRPC localhost:8080/user.User/UpdateUserInfo
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Imh1YW5namciLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4Mjg4NzczLCJpYXQiOjE3NjgyMDIzNzN9.vrXBeIp5biIcKWl1UyOFLGHy9SkT5AHTQLs3G8aquOM
+
+{
+  "nickname": "xxx"
+}
+
+### 修改用户密码
+GRPC localhost:8080/user.User/ChangePassword
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjowLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4Mjk4NTU3LCJpYXQiOjE3NjgyMTIxNTd9.VdMCwdC-uaM7BvqmWLPmbdQRbz1fyROzKkfpJvJN0_Q
+
+{
+  "old": "123456",
+  "new": "huangjg"
+}
