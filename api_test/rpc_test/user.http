@@ -16,7 +16,9 @@ Content-Type: application/json
 
 {
   "username": "huangjg",
-  "password": "huangjg"
+  "password": "huangjg",
+  "captcha_id": "uDDXxBrHvYrtRE9VJmZJ",
+  "captcha_code": "68"
 }
 
 
@@ -45,3 +47,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFt
   "old": "123456",
   "new": "huangjg"
 }
+
+### 获取验证码
+GRPC localhost:8080/user.User/GenerateCaptcha
+Content-Type: application/json
+
+{}

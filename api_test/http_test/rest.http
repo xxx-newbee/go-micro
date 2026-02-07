@@ -11,17 +11,19 @@ Content-Type: application/json
 }
 
 ### 登录
-POST http://127.0.0.1:8888/login
+POST http://localhost:8888/login
 Content-Type: application/json
 
 {
   "username": "huangjg",
-  "password": "123456"
+  "password": "123456",
+  "captcha_id": "mzG7D9F3GzBSnrNTdo4k",
+  "captcha_code": "7"
 }
 
 ### 获取用户信息
 GET http://127.0.0.1:8888/v1/info
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoyLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4MzEyNTMwLCJpYXQiOjE3NjgyMjYxMzB9.ltlDvKUwovhSGSylEJUakvGMTWyPgbOiw-IR5ui-WHE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjoyLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4ODAyODIzLCJpYXQiOjE3Njg3MTY0MjN9.kcjOWuaK6TJ4FdnZJcc_OiSY3HzKGq0kqAOAvuQa4NU
 
 
 ### 更改用户信息
@@ -44,3 +46,7 @@ Content-Type: application/json
   "old": "huangjg",
   "new": "123456"
 }
+
+
+### 验证码
+GET http://127.0.0.1:8888/captcha
