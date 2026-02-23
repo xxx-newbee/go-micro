@@ -1,6 +1,12 @@
 [submodule "user"]
 	path = user
-	url = https://github.com/xxx-newbee/user.git
+	url = git@github.com:xxx-newbee/user.git
 [submodule "gateway"]
 	path = gateway
-	url = https://github.com/xxx-newbee/gateway.git
+	url = git@github.com:xxx-newbee/gateway.git
+[submodule "storage"]
+	path = storage
+	url = git@github.com:xxx-newbee/storage.git
+[submodule "order"]
+	path = order
+	url = git@github.com:xxx-newbee/order.git
