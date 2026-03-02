@@ -7,7 +7,9 @@ Content-Type: application/json
   "password": "123456",
   "nickname": "张三",
   "wallet_addr": "0xabcdefggggjsda2lfidsfe3vh5aisdh6fjkashf",
-  "referral_code": "CJY3-UYDX"
+  "referral_code": "CJY3-UYDX",
+  "captcha_id": "JbycYRmC7v7s2VNoAhVg",
+  "captcha_code": "2"
 }
 
 ### 登录
@@ -17,8 +19,8 @@ Content-Type: application/json
 {
   "username": "huangjg",
   "password": "123456",
-  "captcha_id": "mzG7D9F3GzBSnrNTdo4k",
-  "captcha_code": "7"
+  "captcha_id": "RmORHEURJjmBYqAcXFsk",
+  "captcha_code": "15"
 }
 
 ### 获取用户信息
@@ -50,3 +52,15 @@ Content-Type: application/json
 
 ### 验证码
 GET http://127.0.0.1:8888/captcha
+
+
+### rpc chat
+POST http://127.0.0.1:8888/v1/chat
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjowLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzcyNTEwMzc0LCJpYXQiOjE3NzI0MjM5NzR9.zfsONOP21NJIaX3JJaeMpWO7idZOviej-v85fPvEBSY
+Content-Type: application/json
+
+{
+  "prompt": "你好，最新币圈行情怎么样,详细介绍",
+  "model": "qwen2.5:3b-instruct-q8_0",
+  "stream": true
+}

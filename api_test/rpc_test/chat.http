@@ -1,0 +1,17 @@
+GRPC localhost:8082/chat.Chat/Chat
+Content-Type: application/json
+
+{
+  "prompt": "你好，请简单介绍下自己",
+  "model": "qwen2.5:3b-instruct-q8_0"
+}
+
+
+### chat with stream
+GRPC localhost:8082/chat.Chat/StreamChat
+Content-Type: application/json
+
+{
+  "prompt": "你好",
+  "model": "qwen2.5:3b-instruct-q8_0"
+}
