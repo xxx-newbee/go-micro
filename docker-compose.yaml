@@ -6,25 +6,26 @@ services:
     container_name: redis
     networks:
       go-micro:
-        ipv4_address: 172.10.0.100
+        ipv4_address: 172.10.0.2
     ports:
       - "6379:6379"
     volumes:
       - redis-data:/data
     restart: unless-stopped
+
   postgres:
     image: postgres:15
     container_name: postgres
     networks:
       go-micro:
-        ipv4_address: 172.10.0.2
+        ipv4_address: 172.10.0.3
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: huangjg
       POSTGRES_PASSWORD: huangjg@1001
       POSTGRES_DB: go-micro
       PGDATA: /var/lib/postgresql/data/pgdata
-    ports:
-      - "5432:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     restart: unless-stopped
@@ -34,35 +35,30 @@ services:
     container_name: etcd
     networks:
       go-micro:
-        ipv4_address: 172.10.0.3
-    ports: ["2379:2379", "2380:2380"]
+        ipv4_address: 172.10.0.4
+    ports:
+      - "2379:2379"
     command: etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://0.0.0.0:2379
     restart: unless-stopped
 
   user-srv:
     build: ./user
-    image: user-srv:v1.0
+    image: user-srv:latest
     container_name: user-srv
     depends_on: [etcd, postgres]
-    networks:
-      go-micro:
-        ipv4_address: 172.10.0.4
-    ports: ["8080:8080"]
+    network_mode: host
     volumes:
-      - ./etc:/etc
+      - ./etc/user.yaml:/etc/user.yaml
     command: ["service", "-c", "/etc/user.yaml"]
     restart: unless-stopped
 
   gateway:
     build: ./gateway
-    image: gateway-srv:v1.0
+    image: gateway-srv:latest
     container_name: gateway-srv
-    networks:
-      go-micro:
-        ipv4_address: 172.10.0.5
-    ports: ["8888:8888"]
+    network_mode: host
     volumes:
-      - ./etc:/etc
+      - ./etc/gateway-api.yaml:/etc/gateway-api.yaml
     depends_on:
       - user-srv
     command: ["-f", "/etc/gateway-api.yaml"]

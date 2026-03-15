@@ -53,3 +53,11 @@ GRPC localhost:8080/user.User/GenerateCaptcha
 Content-Type: application/json
 
 {}
+
+###
+GRPC localhost:8080/user.User/SendEmail
+Content-Type: application/json
+
+{
+  "email": "1287935492@qq.com"
+}
