@@ -44,6 +44,8 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6Imh1YW5namciLCJ0b2tlbl92ZXJzaW9uIjowLCJpc3MiOiJnby1hZG1pbi1taWNyby91c2VyIiwiZXhwIjoxNzY4Mjk4NTU3LCJpYXQiOjE3NjgyMTIxNTd9.VdMCwdC-uaM7BvqmWLPmbdQRbz1fyROzKkfpJvJN0_Q
 
 {
+  "email": "1287935492@qq.com",
+  "code": "",
   "old": "123456",
   "new": "huangjg"
 }

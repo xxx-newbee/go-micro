@@ -13,3 +13,6 @@
 [submodule "chat"]
 	path = chat
 	url = git@github.com:xxx-newbee/chat.git
+[submodule "front-end"]
+	path = front-end
+	url = git@github.com:xxx-newbee/front-end.git

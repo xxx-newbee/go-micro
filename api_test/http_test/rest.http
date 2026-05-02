@@ -64,3 +64,11 @@ Content-Type: application/json
   "model": "qwen2.5:3b-instruct-q8_0",
   "stream": true
 }
+
+### send email
+GET http://120.79.237.74:8888/email
+Content-Type: application/json
+
+{
+  "email": "1287935492@qq.com"
+}
